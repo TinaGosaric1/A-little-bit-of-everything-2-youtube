@@ -1,22 +1,22 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("src/students.txt"));
+        //making queue from linked list
+        LinkedList<String> names = new LinkedList<String>();
+        names.add("Caleb");
+        names.add("Sue");
+        names.add("Sally");
+        String firstName = names.remove();       //Retrieves and removes the first element of this list.
+        System.out.println(firstName);
 
-        List<String> students = new ArrayList<String>();
-
-        while(scanner.hasNextLine()){
-            students.add(scanner.nextLine());
+        while(!names.isEmpty()){
+            System.out.println(names.remove());
         }
-
-        for(String item : students){
-            System.out.println("Name: " + item);
-        }
-        scanner.close();
     }
 }
