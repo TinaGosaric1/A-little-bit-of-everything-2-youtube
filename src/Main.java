@@ -7,16 +7,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
-        //making queue from linked list
+        //making stack from linked list
         LinkedList<String> names = new LinkedList<String>();
-        names.add("Caleb");
-        names.add("Sue");
-        names.add("Sally");
-        String firstName = names.remove();       //Retrieves and removes the first element of this list.
+        names.push("Caleb"); // Inserts the element at the front of this list.
+        names.push("Sue");
+        names.push("Sally");
+        String firstName = names.pop();       //Removes and returns the first element of this list.
         System.out.println(firstName);
 
         while(!names.isEmpty()){
-            System.out.println(names.remove());
+            System.out.println(names.pop());
         }
     }
 }
