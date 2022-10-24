@@ -1,25 +1,14 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args){
+        HashMap<String, Integer> items = new HashMap<>();
+        items.put("key", 77);
+        items.put("Sally", 97);
+        items.put("Sally", items.getOrDefault("Sally",0) + 1);
 
-        try {
-            Scanner scanner = new Scanner(new File("test.txt"));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-        LinkedList<String> names = new LinkedList<String>();
-        names.push("Caleb"); // Inserts the element at the front of this list.
-        names.push("Sue");
-        names.push("Sally");
-
-        Iterator<String> it = names.iterator();
-
-        while(it.hasNext()){
-            System.out.println(it.next());
-        }
+        for (String key : items.keySet()) System.out.println(key);
+        for (Integer value : items.values()) System.out.println(value);
     }
 }
