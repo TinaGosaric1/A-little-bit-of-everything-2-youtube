@@ -6,8 +6,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void main(String[] args){
         //making stack from linked list
+        try {
+            Scanner scanner = new Scanner(new File("test.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         LinkedList<String> names = new LinkedList<String>();
         names.push("Caleb"); // Inserts the element at the front of this list.
         names.push("Sue");
