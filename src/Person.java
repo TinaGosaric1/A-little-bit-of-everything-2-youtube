@@ -3,12 +3,10 @@ import java.util.Objects;
 public class Person {
     String email;
     String lastName;
-    Position position;
 
-    public Person(String email, String lastName, Position position) {
+    public Person(String email, String lastName) {
         this.email = email;
         this.lastName = lastName;
-        this.position = position;
     }
 
     @Override
@@ -16,11 +14,11 @@ public class Person {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return Objects.equals(email, person.email) && Objects.equals(lastName, person.lastName) && Objects.equals(position, person.position);
+        return Objects.equals(email, person.email) && Objects.equals(lastName, person.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email, lastName, position);
+        return Objects.hash(email, lastName);
     }
 }
