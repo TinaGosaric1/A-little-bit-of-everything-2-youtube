@@ -2,13 +2,12 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Main {
-    public static void main(String[] args){
-        HashMap<String, Integer> items = new HashMap<>();
-        items.put("key", 77);
-        items.put("Sally", 97);
-        items.put("Sally", items.getOrDefault("Sally",0) + 1);
+    public static void main(String[] args) {
+        Person p1 = new Person("email@email.com", "G", new Position(0,1));
+        Person p2 = new Person("email@email.com", "G", new Position(0,0));
 
-        for (String key : items.keySet()) System.out.println(key);
-        for (Integer value : items.values()) System.out.println(value);
+        System.out.println(p1.equals(p2));
+        System.out.println(p1.hashCode());
+        System.out.println(p2.hashCode());
     }
 }
